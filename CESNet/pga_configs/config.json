@@ -1,0 +1,111 @@
+{
+    "seed": 42,
+    "ensemble": 10,
+    "model_params": {
+        "model": "transformer",
+        "waveform_model_dims": [
+            500,
+            500,
+            500
+        ],
+        "output_mlp_dims": [
+            150,
+            100,
+            50,
+            30,
+            10
+        ],
+        "wavelength": [
+            [
+                0.01,
+                15
+            ],
+            [
+                0.01,
+                15
+            ],
+            [
+                0.01,
+                10
+            ]
+        ],
+        "mad_params": {
+            "n_heads": 10,
+            "att_dropout": 0.0,
+            "initializer_range": 0.02
+        },
+        "ffn_params": {
+            "hidden_dim": 1000
+        },
+        "transformer_layers": 6,
+        "hidden_dropout": 0.0,
+        "activation": "relu",
+        "max_stations": 249,
+        "n_pga_targets": 249,
+        "location_mixture": 15,
+        "pga_mixture": 5,
+        "magnitude_mixture": 5,
+        "borehole": false,
+        "bias_mag_mu": 3.5,
+        "bias_mag_sigma": 0.5,
+        "bias_loc_mu": 0,
+        "bias_loc_sigma": 2,
+        "event_token_init_range": 0.02,
+        "no_event_token": true,
+        "rotation_anchor": [
+            42,
+            0
+        ]
+    },
+    "training_params": {
+        "device": 0,
+        "lr": 1e-05,
+        "weighted_loss": true,
+        "clipnorm": 1.0,
+        "epochs_single_station": 25,
+        "epochs_full_model": 200,
+        "filter_single_station_by_pick": true,
+        "station_json_file": "dataset_configs/249_stations.json",
+        "topK_nearest_file": "dataset_configs/nearest_top3_stations.json",
+        "station_first_appearance": "dataset_configs/station_first_appearance_time.json",
+        "station_last_appearance": "dataset_configs/station_last_appearance_time.json",
+        "data_path": "no",
+        "train_data_path": [
+            "/mnt/disk5/william/Dataset/TEAM/taiwan/CWBSN/PGA_location_oriented/train_CWBSN_window_split_year.hdf5"
+        ],
+        "val_data_path": [
+            "/mnt/disk5/william/Dataset/TEAM/taiwan/CWBSN/PGA_location_oriented/val_CWBSN_window_split_year.hdf5"
+        ],
+        "test_data_path": [
+            "/mnt/disk5/william/Dataset/TEAM/taiwan/CWBSN/PGA_location_oriented/test_CWBSN_window_split_year.hdf5"
+        ],
+        "workers": 15,
+        "weight_path": "Validation_20240612_122222_labelReassigned_unusedStation_3emb",
+        "ensemble_rotation": false,
+        "generator_params": [
+            {
+                "key": "source_magnitude",
+                "batch_size": 20,
+                "min_upsample_magnitude": 4,
+                "magnitude_resampling": 1.5,
+                "translate": false,
+                "disable_station_foreshadowing": true,
+                "selection_skew": 1000,
+                "pga_from_inactive": true,
+                "pga_key": "pga",
+                "shuffle_train_dev": true,
+                "trigger_based": true,
+                "scale_metadata": false,
+                "upsample_high_station_events": 10,
+                "transform_target_only": false,
+                "pga_selection_skew": 1000,
+                "cutout_start": -1,
+                "cutout_end": 25,
+                "pos_offset": [
+                    0,
+                    12
+                ]
+            }
+        ]
+    }
+}
