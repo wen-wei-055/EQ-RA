@@ -1,6 +1,8 @@
 ## Combining Retrieval-Augmented Generation (RAG) with Earthquake Research
 
-This project explores the application of Retrieval-Augmented Generation (RAG) in the field of earthquake research. By leveraging RAG, we aim to enhance the accuracy and efficiency of earthquake-related predictions and data analysis. **Note:** This work is still in progress and has not yet been submitted for publication.
+**Note:** This work is still in progress and has not yet been submitted for publication.
+
+This project explores the application of Retrieval-Augmented Generation (RAG) in the field of earthquake research. By leveraging RAG, we aim to enhance the accuracy and efficiency of earthquake-related predictions and data analysis.
 
 ### Research Objective:
 The goal of this project is to integrate RAG techniques with seismic data to improve the understanding and forecasting of earthquake events. This approach allows for more effective use of vast amounts of seismic data and enhances decision-making processes in earthquake prediction and analysis.
